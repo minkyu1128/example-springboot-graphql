@@ -1,0 +1,29 @@
+server:
+  port:
+
+spring:
+  application:
+    name: example-springboot-graphql
+  datasource:
+    hikari:
+      jdbc-url: jdbc:h2:mem:testdb
+      driver-class-name: org.h2.Driver
+      username: sa
+      password:
+  jpa:
+    defer-datasource-initialization: true
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  sql:
+    init:
+      schema-locations: classpath*:db/schema.sql
+      data-locations: classpath*:db/data.sql
+  graphql:
+    graphiql:
+      enabled: true #GraphiQL(GraphQL ????? ??? ???) ???  - http://localhost:8080/graphiql ??
+

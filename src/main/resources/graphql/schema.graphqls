@@ -1,0 +1,16 @@
+type Book {
+  publicId: ID!
+  title: String
+  author: String
+}
+
+type Query {
+  getBooks(size: Int): [Book]
+  getBook(publicId: ID!): Book
+}
+
+type Mutation {
+  createBook(title: String!, author: String!): Book
+  updateBook(publicId: ID!, title: String!, author: String!): Book
+  deleteBook(publicId: ID!): ID
+}
